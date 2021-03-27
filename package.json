@@ -1,0 +1,23 @@
+{
+  "name": "catalogo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1 -p 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardoAz26/catalogo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EduardoAz26/catalogo/issues"
+  },
+  "homepage": "https://github.com/EduardoAz26/catalogo#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}

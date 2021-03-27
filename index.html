@@ -4,26 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="imagens/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="imagens/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="imagens/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <title>Catálogo de Simulídeos do Brasil</title>
+
+    <style>
+        table {
+            color: #fff;
+            width: 100%;
+        }
+        th {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="conteiner">
+    <div class="conteiner" id="app">
         <header>
             <div class="img-wrapper">
                 <img src="imagens/bg.jpg" alt="">
             </div>
             <div class="banner">
             <h1>Catálogo de Simulídeos do Brasil</h1> 
-            <p>Instituto Oswaldo Cruz</p>
-            <button>Consultar</button>
+            <p>Instituto Oswaldo Cruz {{ message }}</p>
+
+            <input v-model="filter" />
+            
+            <button type="button" @click="listElementos()">Consultar</button>
+
+            <a href="pages/page2.html">Pagina 2</a>
+
+            <table v-if="list.length > 0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(ele, index) in list">
+                        <td>{{ ele.id }}</td>
+                        <td>{{ ele.nome }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
             </div>     
         </header>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="data/data.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
