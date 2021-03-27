@@ -1,0 +1,97 @@
+/* Importa as fontes que serão usadas no projeto */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;1,300;1,500;1,600&display=swap');
+
+/* Importa um arquivo que permite minificar os ícones do site. Ele retira espaços e caracteres desnecessários.*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    animation: zoom 20s;
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.banner {
+    position: absolute;
+    left: 24%;
+    top: 32%;
+}
+
+.banner h1 {
+    color: #cbdbd5;
+    font-size: 3.1rem;
+    font-family: "Baloo Da 2", serif;
+    font-weight: 200;
+    text-shadow: .2rem .3rem 2px rgba(0, 0, 0, .2);
+    opacity: 0;
+    animation: movebanner 3s 0.15s forwards;
+}
+
+.banner p {
+    font-family: "Josefin Slab", serif;
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 2rem .2rem 2px rgba(0, 0, 0, .4);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: movebanner 3s 0.5s forwards;
+}
+
+.banner button {
+    font-family: "Muli", serif;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    background: #093028;
+    background: -webkit-linear-gradient(to right, #237A57, #093028);
+    background: linear-gradient(to right, #237A57, #093028);
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    animation: movebanner 3s 0.9s forwards;
+}
+
+.banner button:hover {
+    opacity: 0.8;
+}
+
+@keyframes movebanner {
+    0%{
+        transform: translate(10rem) rotateY(-30deg);
+    }
+    100%{
+        transform: translate(0) rotateY(0);
+        opacity: 1;
+    }
+}
+
